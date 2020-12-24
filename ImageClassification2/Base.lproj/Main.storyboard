@@ -1,24 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageClassification2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="9wL-Un-wfa">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-Yw-0mh">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="390" id="AOh-fs-9Si"/>
+                                            <constraint firstAttribute="height" constant="50" id="OkH-lE-AH5"/>
+                                        </constraints>
+                                        <items>
+                                            <navigationItem title="ICDemo" id="d5R-Wn-Fp3">
+                                                <barButtonItem key="leftBarButtonItem" title="Select" id="E06-Iw-C2M">
+                                                    <connections>
+                                                        <action selector="selectButtonPressed:" destination="BYZ-38-t0r" id="E0a-ZQ-eaA"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="camera" id="TVZ-uI-N3n">
+                                                    <connections>
+                                                        <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" id="sE8-yP-pVp"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-85-LHu">
+                                        <rect key="frame" x="0.0" y="91" width="390" height="376"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="390" id="Yub-hL-iXw"/>
+                                            <constraint firstAttribute="width" secondItem="ucr-85-LHu" secondAttribute="height" multiplier="195:188" id="yES-lr-NQr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Picture or Take Picture!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5U-MM-6uG">
+                                        <rect key="frame" x="0.0" y="508" width="390" height="118"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="390" id="sCa-gU-xFn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Op-Te-9Ia">
+                                        <rect key="frame" x="0.0" y="667" width="390" height="50"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="390" id="oZX-F5-uer"/>
+                                            <constraint firstAttribute="height" constant="50" id="yLN-SE-AmN"/>
+                                        </constraints>
+                                        <state key="normal" title="Classify Picture"/>
+                                        <connections>
+                                            <action selector="classifyImageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BST-AK-K1C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9wL-Un-wfa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fxp-YU-Vo5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9wL-Un-wfa" secondAttribute="trailing" id="IY9-wt-RWQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9wL-Un-wfa" secondAttribute="bottom" id="l8e-Mk-Ege"/>
+                            <constraint firstItem="9wL-Un-wfa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yZn-wV-5nJ"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="TVZ-uI-N3n" id="KH9-Ql-Gdc"/>
+                        <outlet property="classLabel" destination="E5U-MM-6uG" id="Dms-yj-yH7"/>
+                        <outlet property="classifyImageButton" destination="3Op-Te-9Ia" id="koq-7a-jkX"/>
+                        <outlet property="imageView" destination="ucr-85-LHu" id="wew-w9-zTJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.46153846153846" y="80.33175355450237"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
