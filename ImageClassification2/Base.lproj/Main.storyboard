@@ -58,10 +58,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Op-Te-9Ia">
-                                        <rect key="frame" x="0.0" y="667" width="390" height="50"/>
+                                        <rect key="frame" x="20" y="667" width="350" height="50"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="390" id="oZX-F5-uer"/>
+                                            <constraint firstAttribute="width" constant="350" id="oZX-F5-uer"/>
                                             <constraint firstAttribute="height" constant="50" id="yLN-SE-AmN"/>
                                         </constraints>
                                         <state key="normal" title="Classify Picture"/>
@@ -70,6 +70,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="3Op-Te-9Ia" firstAttribute="centerX" secondItem="9wL-Un-wfa" secondAttribute="centerX" id="hhc-H1-fjD"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
