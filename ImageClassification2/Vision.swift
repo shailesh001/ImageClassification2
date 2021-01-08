@@ -29,7 +29,20 @@ class VisionClassifier {
     }()
     
     var delegate: ViewController?
-    
+
+    init?() {
+        guard let imageClassifierModel = try? BananaOrApple2(configuration: MLModelConfiguration()) else {
+            fatalError("Could not load model")
+        }
+        
+        if let model = try? VNCoreMLModel(for: imageClassifierModel.model) {
+            self.model = model
+        } else {
+            return nil
+        }
+    }
+
+    /*
     init?(mlmodel: MLModel) {
         if let model = try? VNCoreMLModel(for: mlmodel) {
             self.model = model
@@ -37,6 +50,7 @@ class VisionClassifier {
             return nil
         }
     }
+    */
     
     func classify(_ image: UIImage) {
         DispatchQueue.global(qos: .userInitiated).async {
