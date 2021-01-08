@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     private var inputImage: UIImage?
     var classification: String?
     
-    private let classifier = VisionClassifier(mlmodel: BananaOrApple2().model)
+    private let classifier = VisionClassifier()
     
     override func viewDidLoad() {
         super.viewDidLoad()
