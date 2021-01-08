@@ -49,10 +49,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Picture or Take Picture!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5U-MM-6uG">
-                                        <rect key="frame" x="0.0" y="508" width="390" height="118"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="390" id="sCa-gU-xFn"/>
-                                        </constraints>
+                                        <rect key="frame" x="81.000000000000014" y="508" width="228.33333333333337" height="118"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -72,6 +69,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="3Op-Te-9Ia" firstAttribute="centerX" secondItem="9wL-Un-wfa" secondAttribute="centerX" id="hhc-H1-fjD"/>
+                                    <constraint firstItem="E5U-MM-6uG" firstAttribute="centerX" secondItem="9wL-Un-wfa" secondAttribute="centerX" id="xhh-Qy-1Fh"/>
                                 </constraints>
                             </stackView>
                         </subviews>
